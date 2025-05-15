@@ -1,37 +1,24 @@
 import { Link } from "react-router-dom"
 
-export default function Products(){
-  const products = [
-    {
-      id: 1,
-      name: 'samsung s25',
-      price: 1000
-    },
-    {
-      id: 2,
-      name: 'iphone 16',
-      price: 1000
-    },
-    {
-      id: 3,
-      name: 'google pixel something',
-      price: 1000
-    }
-  ]
-  return (
-    <section>
+export default function Products({ products }){
+    return (
+    <section className="products-section">
       <h1>Products Component</h1>
-      <ul>
+      <ul className="product-list">
         {
-          products.map(product => (
-            <li key={product.id}>
-              <Link 
-                to={`${product.id}`} 
-                state={{ name: product.name, price: product.price }}>
-                {product.name}
-              </Link>
-            </li>
-          ))
+          products.map(product => {
+            const { id, image, price, title } = product
+            return (
+              <li key={id}>
+                <Link 
+                  to={`${id}`} 
+                  state={{ product: product }}
+                >
+                  <img src={image} alt={title} width='50px' />
+                  <p>{ title }</p>
+                </Link>
+              </li>
+            )})
         }
       </ul>
     </section>
