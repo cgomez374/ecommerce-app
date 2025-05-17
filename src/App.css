@@ -12,7 +12,11 @@ a {
 nav {
   background-color: aliceblue;
   width: 100%;
-  height: 60px;
+  height: 50px;
+}
+
+li {
+  list-style: none;
 }
 
 .link-container {
@@ -26,8 +30,8 @@ nav {
 }
 
 .link-container {
-  font-size: 18px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 
@@ -41,10 +45,6 @@ nav {
   gap: 10px;
 }
 
-.products-section h1 {
-  
-}
-
 .product-list {
   display: flex;
   flex-direction: row;
@@ -56,8 +56,9 @@ nav {
 .product-list li {
   background-color: aliceblue;
   width: 300px;
-  height: 200px;
+  height: auto;
   margin: 5px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,8 +82,9 @@ nav {
 
 .product {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
   height: auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,5 +94,96 @@ nav {
 .product img {
   width: 20%;
   height: auto;
-  margin-top: 50px;
+  margin: 35px;
 }
+
+/* CART STYLES */
+.cart-btn {
+  width: 40%;
+  margin: 14px auto;
+  padding: 5px;
+  text-transform: capitalize;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: purple;
+  color: aliceblue;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.cart-container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.cart-list {
+  background-color: aliceblue;
+  margin: 10px auto;
+  padding: 5px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+}
+
+.cart-list li {
+  margin: 18px auto;
+  /* background-color: green; */
+  width: 90%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cart-list li img {
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+
+}
+
+.cart-list li div {
+  /* background-color: brown; */
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 16px;
+}
+
+.cart-list li div .cart-quantity-btn-container {
+  /* background-color: gold; */
+  width: 20%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.cart-list li div .cart-quantity-btn-container button {
+  width: 20px;
+  height: 18px;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: purple;
+  color: aliceblue;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+

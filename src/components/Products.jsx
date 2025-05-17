@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
+import { useCart } from "../utils/CartContext.jsx"
 
 export default function Products({ products }){
-    return (
+  const { addToCart } = useCart()
+  return (
     <section className="products-section">
-      <h1>Products Component</h1>
+      <h1>Products</h1>
       <ul className="product-list">
         {
           products.map(product => {
@@ -17,6 +19,12 @@ export default function Products({ products }){
                   <img src={image} alt={title} width='50px' />
                   <p>{ title }</p>
                 </Link>
+                <button 
+                  className="cart-btn"
+                  onClick={() => addToCart(product)}
+                >
+                  add to cart
+                </button>
               </li>
             )})
         }

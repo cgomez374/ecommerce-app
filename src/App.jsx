@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { CartProvider } from './utils/CartContext.jsx'
 import getProducts from './utils/getProducts.js'
 import './App.css'
 import Home from './components/Home'
@@ -18,16 +19,18 @@ function App() {
   }, [])
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products products={products} />} />
-        <Route path='/products/:id' element={<ProductDetail />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<Products products={products} />} />
+          <Route path='/products/:id' element={<ProductDetail />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   )
 }
 
