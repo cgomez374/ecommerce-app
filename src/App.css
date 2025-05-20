@@ -122,11 +122,43 @@ li {
   gap: 10px;
 }
 
+.list-summary-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: space-evenly;
+}
+
+.order-summary {
+  background-color: aliceblue;
+  width: 30%;
+  margin: 10px auto;
+  height: 200px;
+  text-align: center;
+  text-transform: capitalize;
+
+}
+
+.order-summary h3 {
+  margin: 15px 5px;
+}
+
+.order-summary p {
+  margin: 5px;
+  font-size: 14px;
+}
+
+.order-summary-btns button {
+  width: 30%;
+  margin: 16px 5px;
+}
+
 .cart-list {
   background-color: aliceblue;
   margin: 10px auto;
   padding: 5px;
-  width: 60%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -162,6 +194,10 @@ li {
   align-items: center;
   justify-content: space-evenly;
   font-size: 16px;
+}
+
+.cart-list li div p {
+  font-size: 14px;
 }
 
 .cart-list li div .cart-quantity-btn-container {
