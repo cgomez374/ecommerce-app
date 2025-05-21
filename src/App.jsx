@@ -28,6 +28,7 @@ function App() {
           <Route path='/products/:id' element={<ProductDetail />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<NotFound />} />
+          <Route path='/products/*' element={<NotFound />} />
         </Routes>
       </Router>
     </CartProvider>
