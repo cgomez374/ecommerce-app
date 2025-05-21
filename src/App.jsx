@@ -12,11 +12,12 @@ import NotFound from './components/NotFound'
 
 function App() {
   const [products, setProducts] = useState([])
+  const [activeFilter, setActiveFilter] = useState('all')
 
   useEffect(() => {
     const getData = async () => setProducts(await getProducts())
     getData()
-  }, [])
+    }, [])
 
   return (
     <CartProvider>
@@ -24,7 +25,15 @@ function App() {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/products' element={<Products products={products} />} />
+          <Route path='/products' 
+            element={
+              <Products 
+                products={products} 
+                activeFilter={activeFilter}
+                setActiveFilter={setActiveFilter}                            
+              />
+            } 
+          />
           <Route path='/products/:id' element={<ProductDetail />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<NotFound />} />
