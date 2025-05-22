@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useCart } from "../utils/CartContext.jsx"
-import { useState } from "react"
+import ProductListItem from "./ProductListItem.jsx"
 
 export default function Products({ products, activeFilter, setActiveFilter }){
   const { addToCart } = useCart()
@@ -38,24 +38,8 @@ export default function Products({ products, activeFilter, setActiveFilter }){
       <ul className="product-list">
         {
           filteredProducts.map(product => {
-            const { id, image, price, title } = product
             return (
-              <li key={id}>
-                <Link 
-                  to={`${id}`} 
-                  state={{ product: product }}
-                >
-                  <img src={image} alt={title} width='50px' />
-                  <p>{ title }</p>
-                  <p className="price">${ price.toFixed(2) }</p>
-                </Link>
-                <button 
-                  className="cart-btn"
-                  onClick={() => addToCart(product)}
-                >
-                  add to cart
-                </button>
-              </li>
+              <ProductListItem key={product.id} product={product} />
             )})
         }
       </ul>

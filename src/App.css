@@ -21,6 +21,19 @@ li {
 
 /* HOMEPAGE */
 
+.homepage-container {
+  margin: 0 auto;
+}
+
+.hero {
+  background-color: aliceblue;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+
 
 
 /* NAVBAR */

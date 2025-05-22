@@ -24,7 +24,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home products={products} />} />
           <Route path='/products' 
             element={
               <Products 
@@ -37,7 +37,6 @@ function App() {
           <Route path='/products/:id' element={<ProductDetail />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='*' element={<NotFound />} />
-          <Route path='/products/*' element={<NotFound />} />
         </Routes>
       </Router>
     </CartProvider>
