@@ -52,16 +52,15 @@ export default function Cart(){
                     return (
                       <li key={id}>
                         <img src={image} alt={title}/>
-                        <div className="">
+                        <div className="cart-item-info">
                           <Link
                             to={`/products/${id}`} 
                             state={{ product: product }}
                           >
                             <h4>{ title }</h4>
                           </Link>
-                          <p>price: ${ price }</p>
+                          <p>price: ${ price.toFixed(2) }</p>
                           <div className="cart-quantity-btn-container">
-                            {/* <p>quantity: </p> */}
                             <button onClick={() => removeFromCart(id)}>-</button>
                             <p>{ quantity }</p>
                             <button onClick={() => addToCart(product)}>+</button>

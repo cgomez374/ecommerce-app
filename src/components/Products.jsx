@@ -1,11 +1,16 @@
-import { Link } from "react-router-dom"
-import { useCart } from "../utils/CartContext.jsx"
+import { useLocation } from "react-router-dom"
+import { useEffect } from "react"
 import ProductListItem from "./ProductListItem.jsx"
 
-export default function Products({ products, activeFilter, setActiveFilter }){
-  const { addToCart } = useCart()
+export default function Products({ products, activeFilter, setActiveFilter, categories }){
+  const location = useLocation()
 
-  const categories = [...new Set(products.map(product => product.category))]
+  useEffect(() => {
+    if(location.state){
+      const { category } = location.state
+      setActiveFilter(category)
+    }
+  }, [])
 
   const filteredProducts = products.filter(product => {
     if(activeFilter === 'all') return true
@@ -18,7 +23,7 @@ export default function Products({ products, activeFilter, setActiveFilter }){
       <h1>Products</h1>
       <select 
         name="categories" 
-        className="categories"
+        className="categories-select"
         value={activeFilter}
         onChange={(e) => setActiveFilter(e.currentTarget.value)}
       >
